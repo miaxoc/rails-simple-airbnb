@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}

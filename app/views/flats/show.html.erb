@@ -1,0 +1,57 @@
+<div class="header border-bottom p-3 bg-light d-flex justify-content-between">
+  <div>
+    <h4>Simple Airbnb</h4>
+  </div>
+  <div>
+    <%= link_to 'Add flat', 'flats/new', class: "btn btn-primary" %>
+  </div>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://st.hzcdn.com/simgs/pictures/patios/modern-farmhouse-on-vale-court-e2-homes-ltd-img~a541eb270b1705cd_14-1306-1-4255471.jpg);">
+</div>
+
+<div class="container d-flex">
+  <div class="left-text col-8 m-4">
+    <div class="card bg-light my-4 p-4">
+      <h1><%= @flat.name %></h1>
+      <p><%= @flat.address %></p>
+    </div>
+
+    <div class="card bg-light my-4 p-4">
+      <h3>A bit more about this flat...</h3>
+      <p><%= @flat.description %></p>
+    </div>
+
+    <div class="card bg-light p-4">
+      <h3>Details:</h3>
+      <div class="d-flex">
+        <div class="me-3">
+          <i class="fa-solid fa-users"></i><%= @flat.number_of_guests%>
+        </div>
+        <div>
+          <i class="fa-solid fa-money-bill"></i><%= @flat.price_per_night%>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="booking col-3 m-4 card bg-light p-4">
+    <h5>Book this place!</h5>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">From:</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Until:</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div>
+      <%= link_to 'Book', '', class: "btn btn-success w-100" %>
+    </div>
+  </div>
+
+</div>

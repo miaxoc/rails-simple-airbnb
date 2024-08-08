@@ -1,0 +1,23 @@
+<div class="header border-bottom p-3 bg-light d-flex justify-content-between">
+  <div>
+    <h4>Simple Airbnb</h4>
+  </div>
+  <div>
+    <%= link_to 'Add flat', 'flats/new', class: "btn btn-primary" %>
+  </div>
+</div>
+
+
+<div class="container w-50 bg-light px-4 mt-4">
+  <h1 class="pt-4">Add a new flat</h1>
+
+  <%= simple_form_for [@flat] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address%>
+    <%= f.input :description%>
+    <%= f.input :price_per_night%>
+    <%= f.input :number_of_guests%>
+    <%= f.submit :class => "btn btn-primary me-2 mb-4" %>
+    <%= link_to "Cancel", :back, {:class=>"btn btn-danger mb-4"} %>
+  <% end %>
+</div>

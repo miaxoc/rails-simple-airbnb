@@ -1,0 +1,36 @@
+<div class="header border-bottom p-3 bg-light d-flex justify-content-between">
+  <div>
+    <h4>Simple Airbnb</h4>
+  </div>
+  <div>
+    <%= link_to 'Add flat', 'flats/new', class: "btn btn-primary" %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="d-flex justify-content-center mt-3">
+    <h1>All our flats</h1>
+  </div>
+
+  <div class="row w-100 d-flex justify-content-center">
+    <% @flats.each do |flat|%>
+      <div class="card m-2 p-0 col-3">
+        <div class="card-header">
+          <h5 class="card-title"><%= link_to flat.name, flat_path(flat), class: "text-decoration-none text-black" %></h5>
+          <p class="card-text"><%= flat.address %></p>
+          <div class="d-flex">
+            <div class="me-3">
+              <i class="fa-solid fa-users"></i><%= flat.number_of_guests%>
+            </div>
+            <div>
+              <i class="fa-solid fa-money-bill"></i><%= flat.price_per_night%>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <%= link_to "More information", flat_path(flat), class: "text-decoration-none" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
